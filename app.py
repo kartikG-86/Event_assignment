@@ -120,10 +120,12 @@ async def find_event():
 
             end_date = start_date + timedelta(days=14)
             filtered_data = file[(file['date'] >= start_date) & (file['date'] < end_date)]
+            filtered_data = filtered_data.to_dict(orient='records')
+            filtered_data = sorted(filtered_data, key=lambda x: x['date'])
 
             tasks = []
             async with aiohttp.ClientSession() as session:
-                for entry in filtered_data.to_dict(orient='records'):
+                for entry in filtered_data:
                     tasks.append(process_event(session, entry, latitude, longitude))
                 results = await asyncio.gather(*tasks)
 
@@ -140,5 +142,3 @@ async def find_event():
     return render_template('find_event.html')
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
