@@ -44,23 +44,87 @@ Once the server is running, you can access the API endpoints using tools like Po
 ## API Endpoints
 
 ### /add_event
-Method: GET
-Description: Adds a new event to the system.
-Parameters:
-event_name: Name of the event (string, required)
-city_name: Name of the city where the event is happening (string, required)
-date: Date of the event in the format "YYYY-MM-DD" (string, required)
-time: Time of the event in the format "HH:MM:SS" (string, required)
+####  Request Format:
 
-### /events/find
-Method: GET
-Description: Finds events happening within the next 14 days based on user-provided location and date.
-Parameters (GET):
-latitude: Latitude of the user's location (float, required)
-longitude: Longitude of the user's location (float, required)
-date: Date of the event in the format "YYYY-MM-DD" (string, required)
-The API utilizes asynchronous programming techniques to optimize performance, particularly when making API requests to fetch weather and distance information. Asynchronous programming allows multiple tasks to be executed concurrently, reducing overall response time and improving efficiency.
+- **Method**: GET
+- **Description**: Adds a new event to the system.
+- **Parameters**:
+  * `event_name` (string, required): Name of the event.
+  * `city_name` (string, required): Name of the city where the event is happening.
+  * `date` (string, required): Date of the event in the format "YYYY-MM-DD".
+  * `time` (string, required): Time of the event in the format "HH:MM:SS".
 
+#### Response Format:
+
+#### Success Response:
+
+- **Code**: 200 OK
+- **Content**: JSON object with details of the added event.
+
+````
+{
+    "Success": "Your Event Added Successfully",
+    "event": {
+        "event_name": "Birthday Party",
+        "city_name": "New York",
+        "date": "2024-12-31",
+        "time": "18:00:00"
+    }
+}
+````
+#### Error Response:
+
+* **Code**: 400 Bad Request
+* **Content**: JSON object with error message.
+
+````
+{
+    "error_message": "Depend on Type of error",
+    "error_type" : "Depend on Particular Error type"
+}
+ ````
+## /events/find
+### Request Format:
+* **Method**: GET
+* **Description**: Finds events happening within the next 14 days based on user-provided location and date.
+* **Parameters**:
+  * `latitude` (float, required): Latitude of the user's location.
+  * `longitude` (float, required): Longitude of the user's location.
+  * `date` (string, required): Date of the event in the format "YYYY-MM-DD".
+
+### Response Format:
+#### Success Response:
+
+* **Code**: 200 OK
+* **Content**: JSON object with details of the found events.
+````
+[
+    {
+        "events": [10 items],
+        "page": 1,
+        "pageSize": 10,
+        "totalEvents": 39,
+        "totalPages": 4
+    },
+    {
+        "events": [10 items],
+        "page": 2,
+        "pageSize": 10,
+        "totalEvents": 39,
+        "totalPages": 4
+    },
+]
+````
+### Error Response:
+
+* **Code**: 400 Bad Request
+* **Content**: JSON object with error message.
+````
+{
+    "error_message": "Depend on Type of error",
+    "error_type" : "Depend on Particular Error type"
+}
+````
 ## Web Interface
 The project includes a simple web interface where users can interact with the API endpoints by submitting details via a form. The web interface can be accessed by navigating to http://localhost:5000 in a web browser while the Flask server is running.
 

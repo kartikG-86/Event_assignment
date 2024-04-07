@@ -88,7 +88,12 @@ def add_event():
             df = pd.concat([file,new_df],ignore_index=True)
 
             df.to_csv("Backend_assignment_gg_dataset - dataset.csv",index=False)
-            return jsonify({"Success":"Your Details Added Successfully"})
+            return jsonify({"Success":"Your Event Added Successfully", "event": {
+                "event_name": event_name,
+                "city_name": city_name,
+                "date": date,
+                "time": time
+    }})
         except Exception as e:
             # Convert the exception to a dictionary
             exception_data = {
