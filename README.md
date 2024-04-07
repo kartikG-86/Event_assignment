@@ -9,7 +9,7 @@ The Event Finder API is a Flask-based web service designed to help users find ev
 ## Installation
 1. Clone the repository to your local machine:
 
-git clone https://github.com/kartikG-86/Event_assignment.git
+#### git clone https://github.com/kartikG-86/Event_assignment.git
 
 2. Install the required dependencies using pip:
 
@@ -37,7 +37,7 @@ By leveraging Python and CSV files, the project achieves a balance between simpl
 ## Usage
 Start the Flask server:
 
-python app.py
+#### python app.py
 
 Once the server is running, you can access the API endpoints using tools like Postman or by submitting requests via the provided web interface.
 
@@ -53,15 +53,12 @@ date: Date of the event in the format "YYYY-MM-DD" (string, required)
 time: Time of the event in the format "HH:MM:SS" (string, required)
 
 ### /events/find
-Method: GET or POST
+Method: GET
 Description: Finds events happening within the next 14 days based on user-provided location and date.
 Parameters (GET):
 latitude: Latitude of the user's location (float, required)
 longitude: Longitude of the user's location (float, required)
 date: Date of the event in the format "YYYY-MM-DD" (string, required)
-Parameters (GET):
-JSON payload with the same parameters as GET request
-Asynchronous Processing
 The API utilizes asynchronous programming techniques to optimize performance, particularly when making API requests to fetch weather and distance information. Asynchronous programming allows multiple tasks to be executed concurrently, reducing overall response time and improving efficiency.
 
 ## Web Interface
