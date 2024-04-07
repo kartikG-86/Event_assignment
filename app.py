@@ -142,3 +142,5 @@ async def find_event():
     return render_template('find_event.html')
 
 
+if __name__ == "__main__":
+    app.run(debug=True)
