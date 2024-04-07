@@ -2,9 +2,9 @@
 The Event Finder API is a Flask-based web service designed to help users find events based on their location and specified date. This API provides two endpoints: /add_event for adding new events and /events/find for finding events based on user-provided latitude, longitude, and date.
 
 ## Features
-### Add Event: Allows users to add new events to the system by providing event details such as name, city, date, and time. The /add_event endpoint accepts GET requests for adding events.
+**Add Event**: Allows users to add new events to the system by providing event details such as name, city, date, and time. The /add_event endpoint accepts GET requests for adding events.
 
-### Find Events: Enables users to search for events happening within the next 14 days based on their location and specified date. The /events/find endpoint accepts GET requests for finding events.
+**Find Events**: Enables users to search for events happening within the next 14 days based on their location and specified date. The /events/find endpoint accepts GET requests for finding events.
 
 ## Installation
 1. Clone the repository to your local machine:
@@ -18,19 +18,19 @@ pip install -r requirements.txt
 ## Why Python and CSV?
 Python was chosen as the primary technology stack for this project due to its simplicity, versatility, and ease of use in handling data processing tasks. Here's why Python was selected:
 
-Data Processing: Python provides robust libraries and tools for handling various data processing tasks efficiently. With libraries like Pandas and NumPy, managing and manipulating data, especially in CSV format, becomes straightforward.
+**Data Processing**: Python provides robust libraries and tools for handling various data processing tasks efficiently. With libraries like Pandas and NumPy, managing and manipulating data, especially in CSV format, becomes straightforward.
 
-Ease of Use: Python's syntax is clean and readable, making it easy for developers to understand and maintain code. Additionally, Python's extensive standard library and rich ecosystem of third-party packages offer solutions for a wide range of development needs.
+**Ease of Use**: Python's syntax is clean and readable, making it easy for developers to understand and maintain code. Additionally, Python's extensive standard library and rich ecosystem of third-party packages offer solutions for a wide range of development needs.
 
-Community Support: Python has a large and active community of developers, which means abundant resources, tutorials, and community support are readily available. This makes it easier to troubleshoot issues and find solutions to problems encountered during development.
+**Community Support**: Python has a large and active community of developers, which means abundant resources, tutorials, and community support are readily available. This makes it easier to troubleshoot issues and find solutions to problems encountered during development.
 
 As for the choice of using a CSV file instead of a traditional database:
 
-Simplicity: For this project, a CSV file was chosen as the data storage solution due to its simplicity and ease of implementation. Unlike setting up and managing a database server, working with CSV files requires minimal configuration and overhead.
+**Simplicity**: For this project, a CSV file was chosen as the data storage solution due to its simplicity and ease of implementation. Unlike setting up and managing a database server, working with CSV files requires minimal configuration and overhead.
 
-Portability: CSV files are platform-independent and can be easily shared and transferred between different systems. This makes it convenient for storing and exchanging event data without worrying about compatibility issues.
+**Portability**: CSV files are platform-independent and can be easily shared and transferred between different systems. This makes it convenient for storing and exchanging event data without worrying about compatibility issues.
 
-Low Overhead: Since the project involves a relatively small-scale application and does not require complex querying or transactional capabilities, using a CSV file provides a lightweight and low-overhead solution for storing event data.
+**Low Overhead**: Since the project involves a relatively small-scale application and does not require complex querying or transactional capabilities, using a CSV file provides a lightweight and low-overhead solution for storing event data.
 
 By leveraging Python and CSV files, the project achieves a balance between simplicity, efficiency, and ease of use, making it suitable for rapid development and deployment of the Event Finder API.
 
@@ -40,7 +40,7 @@ Start the Flask server:
 python app.py
 Once the server is running, you can access the API endpoints using tools like Postman or by submitting requests via the provided web interface.
 
-API Endpoints
+## API Endpoints
 
 ### /add_event
 Method: GET
