@@ -1,0 +1,18 @@
+{% block content %}
+{% include 'header.html' %}
+
+<div class="container-fluid row ">
+    <div class="fs-1 col-8">Event Management</div>
+    <div class="col-4 my-3 text-center">
+        <a class="btn btn-outline-success" type="button" href="{{url_for('addevent_section')}}" style="text-decoration:None;color:black">Add event</a>
+                <a class="btn btn-outline-success" type="button" href="{{url_for('search_event')}}" style="text-decoration:None;color:black">Find event</a>
+    </div>
+    <div class="col-12" style=" height:90vh;width:100vw;background-image: url('./static/background.jpg'); background-position: center; background-repeat: no-repeat; background-size: cover;">
+    </div>
+</div>
+
+
+
+
+{% include 'footer.html' %}
+{% endblock %}

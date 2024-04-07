@@ -1,0 +1,48 @@
+{% block content %}
+{% include 'header.html' %}
+<div class="container py-5">
+    <div class="row justify-content-center py-5 my-5 mx-2">
+        <div class="col-md-8 col-lg-4 col-12">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Search Event</h5>
+                    <div class="text-danger">
+                        <h4>{{message}}</h4>
+                    </div>
+                    <form id="searchForm" action="{{url_for('find_event')}}" method="get" onsubmit="showWaitMessage();clearForm()">
+
+                        <div class="form-floating mb-3">
+                            <input type="text" name="date" class="form-control" id="floatingInput" required/>
+                            <label for="floatingInput">Date</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="latitude" class="form-control" id="floatingInput" required/>
+                            <label for="floatingInput">Latitude</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="longitude" class="form-control" id="floatingInput" required/>
+                            <label for="floatingInput">Longitude</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block col-12">Search</button>
+                    </form>
+                    <div id="waitMessage" style="display: none;">
+                        <p class="text-center text-muted mt-3">Please wait, we are searching...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showWaitMessage() {
+        document.getElementById('waitMessage').style.display = 'block';
+    }
+        function clearForm() {
+        document.getElementById('eventForm').reset();
+    }
+</script>
+
+{% include 'footer.html' %}
+{% endblock %}

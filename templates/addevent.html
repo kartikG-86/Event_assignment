@@ -1,0 +1,48 @@
+{% block content %}
+{% include 'header.html' %}
+<div class="container py-5">
+    <div class="row justify-content-center py-5 my-5 mx-2">
+        <div class="col-md-8 col-lg-4 col-12">
+            <div class="card shadow p-3 mb-5 bg-white rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-center mb-4">Add Event</h5>
+
+                    <form id="eventForm" action="{{url_for('add_event')}}" method="get" >
+                        <div class="form-floating mb-3">
+                            <input type="text" name="event_name" class="form-control" id="eventNameInput" placeholder="Enter Event Name" required/>
+                            <label for="eventNameInput">Event Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="city_name" class="form-control" id="cityNameInput" placeholder="Enter City Name" required/>
+                            <label for="cityNameInput">City Name</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="date" class="form-control" id="dateInput" placeholder="YYYY-MM-DD" required/>
+                            <label for="dateInput">Date</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="time" class="form-control" id="timeInput" placeholder="HH:MM:SS" required/>
+                            <label for="timeInput">Time</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block col-12">Add Event</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script>-->
+<!--    function showMessage() {-->
+<!--        document.getElementById('message').style.display = 'block';-->
+<!--    }-->
+<!--        function clearForm() {-->
+<!--        document.getElementById('eventForm').reset();-->
+<!--    }-->
+<!--</script>-->
+
+
+{% include 'footer.html' %}
+{% endblock %}
