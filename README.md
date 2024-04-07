@@ -37,7 +37,7 @@ By leveraging Python and CSV files, the project achieves a balance between simpl
 ## Usage
 Start the Flask server:
 
-#### python app.py
+#### python main.py
 
 Once the server is running, you can access the API endpoints using tools like Postman or by submitting requests via the provided web interface.
 

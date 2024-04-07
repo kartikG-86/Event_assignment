@@ -3,3 +3,4 @@ pandas~=2.2.0
 aiohttp~=3.7.4
 Flask~=2.3.2
 geopy~=2.2.0
+gunicorn==21.2.0
