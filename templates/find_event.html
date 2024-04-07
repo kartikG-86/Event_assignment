@@ -12,16 +12,16 @@
                     <form id="searchForm" action="{{url_for('find_event')}}" method="get" onsubmit="showWaitMessage();clearForm()">
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="date" class="form-control" id="floatingInput" required/>
-                            <label for="floatingInput">Date</label>
+                            <input type="text" name="date" class="form-control" id="dateInput" required/>
+                            <label for="dateInput">Date</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="latitude" class="form-control" id="floatingInput" required/>
-                            <label for="floatingInput">Latitude</label>
+                            <input type="text" name="latitude" class="form-control" id="latitudeInput" required/>
+                            <label for="latitudeInput">Latitude</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="longitude" class="form-control" id="floatingInput" required/>
-                            <label for="floatingInput">Longitude</label>
+                            <input type="text" name="longitude" class="form-control" id="longitudeInput" required/>
+                            <label for="longitudeInput">Longitude</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block col-12">Search</button>
