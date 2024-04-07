@@ -7,26 +7,33 @@
                 <div class="card-body">
                     <h5 class="card-title text-center mb-4">Add Event</h5>
 
-                    <form id="eventForm" action="{{url_for('add_event')}}" method="get" >
+                    <form id="eventForm" action="{{url_for('add_event')}}" method="get" onsubmit="showMessage()">
                         <div class="form-floating mb-3">
-                            <input type="text" name="event_name" class="form-control" id="eventNameInput" placeholder="Enter Event Name" required/>
+                            <input type="text" name="event_name" class="form-control" id="eventNameInput"
+                                   placeholder="Enter Event Name" required/>
                             <label for="eventNameInput">Event Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="city_name" class="form-control" id="cityNameInput" placeholder="Enter City Name" required/>
+                            <input type="text" name="city_name" class="form-control" id="cityNameInput"
+                                   placeholder="Enter City Name" required/>
                             <label for="cityNameInput">City Name</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="date" class="form-control" id="dateInput" placeholder="YYYY-MM-DD" required/>
+                            <input type="text" name="date" class="form-control" id="dateInput" placeholder="YYYY-MM-DD"
+                                   required/>
                             <label for="dateInput">Date</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="time" class="form-control" id="timeInput" placeholder="HH:MM:SS" required/>
+                            <input type="text" name="time" class="form-control" id="timeInput" placeholder="HH:MM:SS"
+                                   required/>
                             <label for="timeInput">Time</label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block col-12">Add Event</button>
                     </form>
+                    <div id="waitMessage" style="display: none;">
+                        <p class="text-center text-muted mt-3">Please wait, we are adding...</p>
+                    </div>
 
                 </div>
             </div>
@@ -34,14 +41,11 @@
     </div>
 </div>
 
-<!--<script>-->
-<!--    function showMessage() {-->
-<!--        document.getElementById('message').style.display = 'block';-->
-<!--    }-->
-<!--        function clearForm() {-->
-<!--        document.getElementById('eventForm').reset();-->
-<!--    }-->
-<!--</script>-->
+<script>
+    function showMessage() {
+        document.getElementById('waitMessage').style.display = 'block';
+    }
+</script>
 
 
 {% include 'footer.html' %}
